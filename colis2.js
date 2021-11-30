@@ -310,9 +310,8 @@ array.sort(function(a, b) {
     return a[1] - b[1];
 });
 
-let total = 0
+inv_array = array.reverse() 
+
 for(let i=0; i < array.length; i++) {
     console.log(array[i][1])
-    total = total + array[i][1]
 }
-console.log(total)

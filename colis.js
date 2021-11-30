@@ -375,7 +375,9 @@ let iterate = function () {
 */	
 
 /*  ------- PROG 2 ------- */
+/* 
 
+-------- TEST --------
 let array = []
 
 for (var value in colis) {
@@ -437,9 +439,7 @@ let iterate = function () {
 } 
 
 
-/* 
 
--------- TEST --------
 
 let array = []
 
@@ -490,4 +490,64 @@ let iterate = function () {
 			array.splice(i, 1)	
 		}
 */
+
+
+/* Prog 3 
+
+let array = []
+
+for (var value in colis) {
+    array.push([value, colis[value].poids]);
+}
+
+array.sort(function(a, b) {
+    return a[1] - b[1];
+});
+
+let total = 0
+
+for (let i = 0; i < array.length; i++ ) {
+	total = total + array[i][1]
+}
+*/
+
+let array1 = []
+
+for (var value in colis) {
+    array1.push([value, colis[value].poids]);
+}
+
+array1.sort(function(a, b) {
+    return a[1] - b[1];
+});
+
+array = array1.reverse() 
+let lot = []
+let somme = 0
+let ar = []
+
+for (let i=0; i<array.length; i++) {
+	ar.push(array[i][1])
+}
+
+let iterate = function () {
+
+	while (array.length) {	
+
+	somme = 0
+
+	for (let i=0; i<ar.length; i++) {
+		if (somme + ar[i] <= 1000) {
+			somme = somme + ar[i]
+			lot.push(ar[i])
+		}
+	};
+	
+	array = ar.filter(item => !lot.includes(item));
+
+
+
+}
+console.log('array', array);
+}
 
