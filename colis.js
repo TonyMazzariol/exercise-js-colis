@@ -528,26 +528,29 @@ let ar = []
 
 for (let i=0; i<array.length; i++) {
 	ar.push(array[i][1])
+	
 }
 
 let iterate = function () {
 
-	while (array.length) {	
+//	while (array.length) {	
 
 	somme = 0
 
-	for (let i=0; i<ar.length; i++) {
-		if (somme + ar[i] <= 1000) {
-			somme = somme + ar[i]
-			lot.push(ar[i])
+	for (let i=0; i<array.length; i++) {
+		if (somme + array[i][1] <= 1000) {
+			somme = somme + array[i][1]
+			lot.push(array[i])
 		}
 	};
-	
-	array = ar.filter(item => !lot.includes(item));
+	console.log('lot', lot);
+	console.log(array);
 
-
-
+	lot.forEach(element => {
+		console.log(element);
+		array = array.filter(el => element[0] != el[0])
+	});
+	console.log(array);
 }
-console.log('array', array);
-}
+//}
 
